@@ -5,13 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script defer type="module" src="../scripts/models/api.js"></script>
+    <script defer type="module" src="../scripts/models/cadastro.js"></script>
 </head>
 <body>
     <main>
         <section>
+            <h3>Cadastrar</h3>
             <form action="">
-                <h1>batata</h1>
+                <label for="username__cadastro">Insira seu nome de usuario</label>
+                <input type="text" name="username__cadastro" id="username__cadastro" placeholder="Nome de usuario">
+                <label for="email__cadastro">Insira seu melhor email</label>
+                <input type="email" name="email__cadastro" id="email__cadastro" placeholder="Email">
+                <label for="senha__cadastro">Insira sua senha</label>
+                <input type="password" name="senha__cadastro" id="senha__cadastro" placeholder="Senha">
+                <label for="cargo__registro">Insira seu cargo</label>
+                <input type="text" name="cargo__registro" id="cargo__registro" placeholder="Cargo">
+                <label for="imagem__registro">Insira o link da sua imagem</label>
+                <input type="url" name="imagem__registro" id="imagem__registro">
+                <button id="btn__cadastrar">Cadastrar</button>
             </form>
+            <button id="ir__cadastro">Já tem uma conta? Clique aqui</button>
         </section>
     </main>
 </body>
