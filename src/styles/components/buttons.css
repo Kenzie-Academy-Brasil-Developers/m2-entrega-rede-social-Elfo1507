@@ -1,0 +1,55 @@
+.btnForaPagina{
+    background-color: var(--grey2);
+    padding: 5px;
+    border-radius: 2px;
+}
+.btnLogCad{
+    background-color: var(--mainColor);
+    color: white;
+    height: 40px;
+    border-radius: 3px;
+}
+.btnMudarPagina{
+    background-color: white;
+    height: 40px;
+    color: var(--grey1);
+    border: 3px solid var(--grey1);
+    border-radius: 3px;
+}
+.btnMudarPagina:hover{
+    background-color: transparent;
+    color: var(--mainColor);
+    border-color: var(--mainColor);
+}
+.btnSeguir{
+    background-color: white;
+    color: var(--grey1);
+    border: 2px solid var(--grey1);
+    border-radius: 2px;
+    width: fit-content;
+    padding: 5px;
+    height: fit-content;
+}
+.btnSeguir:hover{
+    color: var(--mainColor);
+    border-color: var(--mainColor);
+}
+.btnSeguindo{
+    background-color: var(--mainColor);
+    color: white;
+    border-radius: 2px;
+    width: fit-content;
+    padding: 5px;
+    height: fit-content;
+}
+.postar{
+    background-color: var(--grey4);
+    color: var(--grey3);
+    padding: 5px;
+}
+.abrirPost{
+    background-color: var(--grey1);
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+}
