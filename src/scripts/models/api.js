@@ -99,11 +99,14 @@ class Api{
             headers: this.headersAuth
         })
         .then(res => res.json())
-        // .then(res => console.log(res))
+        .then(res => {
+            console.log(res.count)
+            this.gerarSeguidores(res.count)
+        })
     }
     static async pegarNumeroPagina(){
         let numPag
-        fetch(`${this.baseUrl}posts/?page=${this.numPage}`, {
+        fetch(`${this.baseUrl}posts/?limit=10&offset=${this.numPage}`, {
             method: "GET",
             headers: this.headersAuth
         })
@@ -209,7 +212,72 @@ class Api{
             // peDoPost.append(btnAbrirPost, like, numLike)
             // li.append(cardPessoa, conteudoPost, peDoPost)
             // containerPosts.insertBefore(li, ref)
-
+        })
+    }
+    static async gerarSeguidores(num){
+        fetch(`${this.baseUrl}users/?limit=10&offset=${Math.floor(Math.random() * Math.floor(num / 10))}`, {
+            method: "GET",
+            headers: this.headersAuth,
+        })
+        .then(res => res.json())
+        .then(res => {
+            console.log(res)
+            let containerSeguir = document.querySelector(".containerSeguir")
+            for(let i = 0; i < 3; i++){
+                let valueRandom = Math.floor(Math.random() * res.results.length)
+                let li = document.createElement("li")
+                let card = document.createElement("div")
+                let img = document.createElement("img")
+                let cargoNome = document.createElement("div")
+                let nome = document.createElement("h6")
+                let cargo = document.createElement("p")
+                let btnSeguir = document.createElement("button")
+                img.src = res.results[valueRandom].image
+                nome.innerText = res.results[valueRandom].username
+                cargo.innerText = res.results[valueRandom].work_at
+                btnSeguir.innerText = 'seguir'
+                btnSeguir.classList.add("btnSeguir")
+                btnSeguir.classList.add(`num${i}`)
+                btnSeguir.setAttribute('id', res.results[valueRandom].uuid)
+                card.classList.add("cardPessoa")
+                cargoNome.append(nome, cargo)
+                card.append(img, cargoNome)
+                li.append(card, btnSeguir)
+                containerSeguir.append(li)
+            }
+        })
+    }
+    static async seguir(num, num2){
+        let body = {
+            following_users_uuid: num
+        }
+        console.log(JSON.stringify(body))
+        fetch(`${this.baseUrl}users/follow/`, {
+            method: 'POST',
+            headers: this.headersAuth,
+            body: JSON.stringify(body)
+        })
+        .then((res) => res.json())
+        .then((res) => {
+            let btn = document.querySelector(`.${num2}`)
+            btn.classList.remove("btnSeguir")
+            btn.classList.add("btnSeguindo")
+            btn.classList.add(res.uuid)
+            btn.innerText = 'seguindo'
+            console.log(res)
+        })
+    }
+    static async desseguir(num, num2){
+        fetch(`${this.baseUrl}users/unfollow/${num}`, {
+            method: 'DELETE',
+            headers: this.headersAuth
+        })
+        .then(() => {
+            let btn = document.querySelector(`.${num2}`)
+            btn.classList.remove(num)
+            btn.classList.remove("btnSeguindo")
+            btn.classList.add("btnSeguir")
+            btn.innerText = 'seguir'
         })
     }
 }
