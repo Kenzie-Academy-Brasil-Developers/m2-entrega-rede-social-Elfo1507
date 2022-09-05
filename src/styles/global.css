@@ -1,0 +1,25 @@
+body, ul, li, input, button, img, header, p, h1, h2, h3, h4, h5, h6, input, label, form, section, main, textarea{
+    margin: 0;
+    padding: 0;
+    border: none;
+    list-style: none;
+    outline: none;
+    background-color: transparent;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+:root{
+    --mainColor: #4263EB;
+    --mainColor2: #364FC7;
+    --grey0: #0A0C0D;
+    --grey1: #212529;
+    --grey2: #495057;
+    --grey3: #868E96;
+    --grey4: #DEE2E6;
+    --greyOpacity: rgba(33, 37, 41, 0.5);
+}
+
+body{
+    height: 84vh;
+}

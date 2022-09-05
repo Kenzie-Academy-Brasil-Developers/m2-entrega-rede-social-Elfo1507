@@ -1,0 +1,16 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 40px;
+    padding-right: 40px;
+    align-items: center;
+    background-color: var(--grey0);
+    color: white;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+header > div > button{
+    color: white;
+}

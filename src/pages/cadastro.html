@@ -5,27 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="../styles/components/header.css">
+    <link rel="stylesheet" href="../styles/components/buttons.css">
+    <link rel="stylesheet" href="../styles/components/form.css">
+    <link rel="stylesheet" href="../styles/components/inputs.css">
     <script defer type="module" src="../scripts/models/api.js"></script>
     <script defer type="module" src="../scripts/models/cadastro.js"></script>
 </head>
 <body>
+    <header>
+        <h1>Tech Posters</h1>
+        <div>
+            <button class="ir__Login">Login</button>
+            <button class="ir__cadastro">Cadastro</button>
+        </div>
+    </header>
     <main>
         <section>
             <h3>Cadastrar</h3>
             <form action="">
-                <label for="username__cadastro">Insira seu nome de usuario</label>
-                <input type="text" name="username__cadastro" id="username__cadastro" placeholder="Nome de usuario">
-                <label for="email__cadastro">Insira seu melhor email</label>
-                <input type="email" name="email__cadastro" id="email__cadastro" placeholder="Email">
-                <label for="senha__cadastro">Insira sua senha</label>
-                <input type="password" name="senha__cadastro" id="senha__cadastro" placeholder="Senha">
-                <label for="cargo__registro">Insira seu cargo</label>
-                <input type="text" name="cargo__registro" id="cargo__registro" placeholder="Cargo">
-                <label for="imagem__registro">Insira o link da sua imagem</label>
-                <input type="url" name="imagem__registro" id="imagem__registro">
-                <button id="btn__cadastrar">Cadastrar</button>
+                <input class="input__entrar" type="text" name="username__cadastro" id="username__cadastro" placeholder="Nome de usuario">
+                <input class="input__entrar" type="email" name="email__cadastro" id="email__cadastro" placeholder="Email">
+                <input class="input__entrar" type="password" name="senha__cadastro" id="senha__cadastro" placeholder="Senha">
+                <input class="input__entrar" type="text" name="cargo__registro" id="cargo__registro" placeholder="Cargo">
+                <input class="input__entrar" type="url" name="imagem__registro" id="imagem__registro" placeholder="Url da imagem">
+                <button class="btnLogCad" id="btn__cadastrar">Cadastrar</button>
             </form>
-            <button id="ir__cadastro">Já tem uma conta? Clique aqui</button>
+            <p>Já possui login?</p>
+            <button class="btnMudarPagina" id="ir__cadastro">Ir para a pagina de Login</button>
         </section>
     </main>
 </body>
